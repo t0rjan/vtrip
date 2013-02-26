@@ -1,0 +1,49 @@
+10
+
+dir
+0
+https://trip-app.googlecode.com/svn/trunk/dev/iphone/trip/ghunit/Classes
+https://trip-app.googlecode.com/svn
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ea3ad90c-eaf9-78e7-2ccb-0ba21dc8a80a
+
+SharedUI
+dir
+
+
+
+add
+
+Mock
+dir
+
+
+
+add
+
+GHTest
+dir
+
+
+
+add
+

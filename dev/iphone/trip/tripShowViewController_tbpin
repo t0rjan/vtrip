@@ -1,0 +1,180 @@
+//
+//  tripShowViewController.m
+//  trip
+//
+//  Created by 沈 吾苓 on 13-1-27.
+//  Copyright (c) 2013年 沈 吾苓. All rights reserved.
+//
+
+#import "tripShowViewController.h"
+
+@interface tripShowViewController ()
+@property (strong , nonatomic) NSMutableArray *list_0;
+@property (strong , nonatomic) NSMutableArray *list_1;
+@property (strong , nonatomic) NSMutableArray *height_0;
+@property (strong , nonatomic) NSMutableArray *height_1;
+@property (strong , nonatomic) UITableView *tb_0;
+@property (strong , nonatomic) UITableView *tb_1;
+@end
+
+@implementation tripShowViewController
+
+@synthesize scroll;
+@synthesize tripList;
+@synthesize photoList;
+@synthesize list_0;
+@synthesize list_1;
+@synthesize tb_0;
+@synthesize tb_1;
+
+@synthesize tripId;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    CGFloat height = [UIScreen mainScreen].applicationFrame.size.height - 49;
+    
+    CGRect tbf = CGRectMake(0, 0 , 100, height);
+    self.tb_0 = [[UITableView alloc] initWithFrame:tbf];
+    self.tb_0.delegate = self;
+    self.tb_0.dataSource = self;
+    self.tb_0.tag = 0;
+    self.tb_0.backgroundColor = [UIColor blueColor];
+    self.tb_0.scrollEnabled = NO;
+    CGRect tbf1 = CGRectMake(150, 0 , 100, height);
+    self.tb_1 = [[UITableView alloc] initWithFrame:tbf1];
+    self.tb_1.delegate = self;
+    self.tb_1.dataSource = self;
+    self.tb_1.tag = 1;
+    self.tb_1.scrollEnabled = NO;
+    
+    [self.scroll addSubview:tb_0];
+    [self.scroll addSubview:tb_1];
+    
+    
+    CGRect tmpframe = CGRectMake(122, 200, 50, 30);
+    UILabel *lb = [[UILabel alloc] initWithFrame:tmpframe];
+    lb.text = @"qqqqqqqq";
+    [self.scroll addSubview:lb];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    //[self render];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)render
+{
+    NSString *jsonStr = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
+    self.tripList = [jsonStr JSONValue];
+    
+    NSMutableDictionary *secDic = [self.tripList objectForKey:[NSString stringWithFormat:@"xx%i" ,tripId]];
+    self.photoList = [secDic objectForKey:@"pics"];
+    
+    CGFloat totalHeight_0 = 0.0;
+    CGFloat totalHeight_1 = 0.0;
+    NSInteger totalHeight_tmp = 0;
+    NSMutableArray *arr_0 = [[NSMutableArray alloc] init];
+    NSMutableArray *arr_1 = [[NSMutableArray alloc] init];
+    
+    NSMutableDictionary *arrExtra_0 = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *arrExtra_1 = [[NSMutableDictionary alloc] init];
+    
+    for (NSMutableDictionary *pInfo in self.photoList) {
+        UIImage *img = [UIImage imageNamed:[pInfo objectForKey:@"pic"]];
+        NSMutableDictionary *tmpExtra = [[NSMutableDictionary alloc] init];
+        
+        if (totalHeight_0 == totalHeight_1) {
+            totalHeight_0+=img.size.height;
+            [arr_0 insertObject:pInfo atIndex:0];
+        } else {
+            if (totalHeight_0 < totalHeight_1) {
+                totalHeight_0+=img.size.height;
+                [arr_0 insertObject:pInfo atIndex:0];
+                
+            } else {
+                [arr_1 insertObject:pInfo atIndex:0];
+                totalHeight_1+=img.size.height;
+            }
+        }
+    }
+    self.list_0 = arr_0;
+    self.list_1 = arr_1;
+    NSInteger maxHeight = MAX(totalHeight_0, totalHeight_1);
+
+    self.scroll.contentSize = CGSizeMake([UIScreen mainScreen].applicationFrame.size.width, maxHeight);
+    self.scroll.scrollEnabled = YES;
+    
+    NSLog(@"h0 %f" , totalHeight_0);
+    NSLog(@"h1 %f" , totalHeight_1);
+    
+    //CGRect tb0Frame = CGRectMake(5, 0, 150, totalHeight_0);
+    self.tb_0.contentSize = CGSizeMake(150, totalHeight_0);
+    [self.tb_0 reloadData];
+    CGRect tb1Frame = CGRectMake(165, 0, 150, totalHeight_1);
+    [self.tb_1 setFrame:tb1Frame];
+    [self.tb_1 reloadData];
+     
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (tableView.tag == 0) {
+        NSLog(@"c %d" ,[self.list_0 count]);
+        return [self.list_0 count];
+    } else {
+        NSLog(@"c %d" ,[self.list_0 count]);
+
+        return [self.list_1 count];
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"www");
+    NSString *cellId = [NSString stringWithFormat:@"cellid_%d" , tableView.tag];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if(cell == nil);
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    
+
+    cell.textLabel.text = [[self.list_0 objectAtIndex:[indexPath row]] objectForKey:@"title"];
+    
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    return 100;
+}
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.tb_0 setContentOffset:scrollView.contentOffset animated:YES];
+    [self.tb_1 setContentOffset:scrollView.contentOffset animated:YES];
+    scrollView.contentOffset = CGPointMake(0, 0);
+}
+
+@end
