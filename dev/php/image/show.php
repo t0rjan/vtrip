@@ -11,7 +11,6 @@ include_once '../__global.php';
 $pid = $_GET['pid'];
 $size = $_GET['size'] ? $_GET['size'] : 'big';
 
-
 $ML_IMG_SIZE_CONFIG = ml_factory::load_standard_conf('imageSize');
 if(!isset($ML_IMG_SIZE_CONFIG[$size]))
     die('fdfdf');

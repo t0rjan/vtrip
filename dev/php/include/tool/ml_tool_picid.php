@@ -5,19 +5,6 @@ define(S3_PROJECT_DOMAIN, 'http://image{?}.meila.com/');
 
 class ml_tool_picid
 {
-    const PORTRAIT_50 = 50;
-    const PORTRAIT_30 = 30;
-    const PORTRAIT_100 = 100;
-    const PORTRAIT_200 = 200;
-
-    const IMGSIZE_BIG = 'big';
-    const IMGSIZE_PIN = 'pin';
-    const IMGSIZE_FED = 'fed';
-    const IMGSIZE_GDS = 'gds';
-    const IMGSIZE_PIC = 'pic';
-    const IMGSIZE_THM = 'thm';
-    const IMGSIZE_SQR = 'sqr';
-    
     //生成pid用 size是图片SIZE 也用来HASH PID
     public static function uid2pid($uid , $width , $height) {
         
@@ -72,6 +59,12 @@ class ml_tool_picid
                 $rs = array(
                     'width' => $conf['width'],
                     'height' => intval(($conf['width']/$a['width'])*$a['height'])
+                );
+                break;
+            case ML_IMG_TYPE_CROP:
+                $rs = array(
+                    'width' => $conf['width'],
+                    'height' => $conf['height'],
                 );
                 break;
 

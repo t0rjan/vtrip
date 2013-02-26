@@ -1,4 +1,13 @@
 <?php
+define('PIC_SIZE_SQUARE' , 'square');
+define('PIC_SIZE_SMALL' , 'small');
+define('PIC_SIZE_THUMBNAIL' , 'thumbnail');
+define('PIC_SIZE_MIDDLE' , 'middle');
+define('PIC_SIZE_BMIDDLE' , 'bmiddle');
+define('PIC_SIZE_ORI' , 'orignal');
+define('PIC_SIZE_BLOG_COVER' , 'cover');
+define('PIC_SIZE_WEIBO_MW600' , 'mw600');
+
 define('SINADEF_SSO_COOKIECONF_PATH' , '/usr/local/sinasrv2/lib/php/cookie.conf');
 
 define('SITE_ROOT_URL','http://trip.com');

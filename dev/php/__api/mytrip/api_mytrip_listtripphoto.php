@@ -27,10 +27,12 @@ class aj_listtripphoto extends ml_controller {
         $oPhoto->listPhotoByTripId($this->trip_id , $uid , $this->page);
         $rows = $oPhoto->get_data();
         foreach ($rows as &$row) {
-            $wh = ml_tool_picid::pid2wh($row['pic_id']);
+
+
+            $wh = ml_tool_picid::pid2wh($row['pic_id'] , ML_IMG_SIZE_IPHONE260);
             $row['width_pin'] = $wh['width'];
             $row['height_pin'] = $wh['height'];
-            $row['img_url_pin'] = ml_tool_picid::pid2url($row['pic_id']);
+            $row['img_url_pin'] = ml_tool_picid::pid2url($row['pic_id'] , ML_IMG_SIZE_IPHONE260);
 
             $wh = ml_tool_picid::pid2wh($row['pic_id'] , ML_IMG_SIZE_PIC);
             $row['width_pic'] = $wh['width'];

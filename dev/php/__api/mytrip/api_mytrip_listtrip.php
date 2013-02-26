@@ -24,7 +24,10 @@ class aj_listtrip extends ml_controller {
         $oTrip->getTripListByUid($this->uid , $this->page);
         $rows = $oTrip->get_data();
         foreach ($rows as &$row) {
-        	$row['img_url'] = ml_tool_picid::pid2url($row['cover_picid']);
+        	$row['trpLsCvr_url'] = ml_tool_picid::pid2url($row['cover_picid'], ML_IMG_SIZE_IPHONECROP30X3);
+            $row['trpShwCvr_url'] = ml_tool_picid::pid2url($row['cover_picid'], ML_IMG_SIZE_IPHONECROP32X15);
+            $a = ml_tool_picid::pid2wh($row['cover_picid'] , ML_IMG_SIZE_IPHONECROP32X15);
+            $row['trpShwCvr_h'] = $a['height'];
         }
 
         $aData = array(
