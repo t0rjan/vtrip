@@ -22,7 +22,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
     }
     return self;
 }
@@ -30,9 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[[self.view.subviews objectAtIndex:0] removeFromSuperview];
     self.map = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
     [self.view addSubview:self.map];
+    self.view.backgroundColor = [UIColor whiteColor];
 
 }
 - (void)viewDidAppear:(BOOL)animated

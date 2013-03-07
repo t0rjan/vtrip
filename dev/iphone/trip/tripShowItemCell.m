@@ -76,6 +76,7 @@
     self.like = [[[mlviewEleIconLike alloc] initWithFrame:CGRectMake(6, 90 , 0, 0)] autorelease];
     self.like.dataPool = dataInPool;
     self.like.number = 2;
+
     [self.contentView addSubview:self.like];
     
     self.comment = [[mlViewEleIconComment alloc] initWithFrame:CGRectMake(6, 135 , 0, 0)];

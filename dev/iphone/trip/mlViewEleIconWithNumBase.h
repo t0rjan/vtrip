@@ -15,7 +15,7 @@
 
 @optional
 - (void)mlViewEleIconTouchUpInside:(id)sender;
-
+- (void)mlViewEleIconLongPress:(UILongPressGestureRecognizer *)longPress;
 @end
 
 @interface mlViewEleIconWithNumBase : UIButton

@@ -58,6 +58,7 @@
     self.navigationItem.rightBarButtonItem = navBtn;
     
     self.mapController = [[tripMapViewController alloc] init];
+    self.mapController.view.frame = self.view.frame;
     self.isShowingMap = NO;
     
     //cover
@@ -258,8 +259,22 @@
     if (self.photoCmtC == nil) {
         self.photoCmtC = [[photoCommentViewController alloc] init];
     }
+
     [self.navigationController pushViewController:self.photoCmtC animated:YES];
 }
+- (void)showLike:(UILongPressGestureRecognizer *)longPress
+{
+    if (longPress.state == UIGestureRecognizerStateEnded) {
+        UIView *v = (UIView *)longPress.delegate;
+
+        if (self.photoLikeC == nil) {
+            self.photoLikeC = [[photoLikeViewController alloc] init];
+        }
+        [self.navigationController pushViewController:self.photoLikeC animated:YES];
+
+    }
+}
+
 
 #pragma delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -279,24 +294,25 @@
 
     NSString *cellId = @"tripShowCellId";
     
-    static BOOL nibsRegistered = NO;
-    if(!nibsRegistered)
-    {
-        UINib *nib = [UINib nibWithNibName:@"tripShowItem" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:cellId];
-        nibsRegistered = YES;
-    }
-    
+
     tripShowItemCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell =[[tripShowItemCell alloc] init];
+    }
 
     NSArray *keys = [self.date2photoid allKeys];
     NSString *date = [keys objectAtIndex:indexPath.section];
     NSInteger *photoid = [[self.date2photoid objectForKey:date] objectAtIndex:indexPath.row];
-    NSLog(@"-------- %d" , photoid);
-    NSLog(@"=== %@" , self.photoList);
     cell.imgInfo = [self.photoList objectForKey:photoid];
     [cell setIconDelegate:self];
     [cell render];
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showLikes:)];
+    longPress.minimumPressDuration = 1.0;
+    longPress.delegate = cell;
+    
+    [cell addGestureRecognizer:longPress];
+     
     return cell;
 }
 
@@ -366,8 +382,23 @@
         [self annoShow:photo_id];
     }else if (btn.type == @"comment"){
         [self showComment:photo_id];
+    }else if (btn.type == @"like"){
+        //[self showLike:photo_id];
     }
     [btn playSucessAni];
 
+}
+- (void)showLikes:(UILongPressGestureRecognizer *)longPress{
+    if (longPress.state == UIGestureRecognizerStateEnded) {
+
+        tripShowItemCell *v = (tripShowItemCell *)longPress.delegate;
+        int photo_id = (int)[v.imgInfo objectForKey:@"id"];
+
+        if (self.photoLikeC == nil) {
+            self.photoLikeC = [[photoLikeViewController alloc] init];
+        }
+        [self.navigationController pushViewController:self.photoLikeC animated:YES];
+        
+    }
 }
 @end

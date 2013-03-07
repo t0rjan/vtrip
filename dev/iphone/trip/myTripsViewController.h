@@ -23,7 +23,7 @@
 
 @interface myTripsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property (assign , nonatomic) NSMutableArray *tripList;
+@property (strong , nonatomic) NSMutableArray *tripList;
 
 @property (strong , nonatomic) tripShowViewController *tripShowC;
 @property (strong , nonatomic) modelMyTrip *modelMyTrip;

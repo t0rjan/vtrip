@@ -175,6 +175,10 @@
 		8ECBC1E016D9A02800BE2A7C /* photoCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBC1DE16D9A02800BE2A7C /* photoCommentViewController.m */; };
 		8ECBC1E316D9A82400BE2A7C /* mlViewEmotionInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ECBC1E116D9A82400BE2A7C /* mlViewEmotionInput.h */; };
 		8ECBC1E416D9A82400BE2A7C /* mlViewEmotionInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECBC1E216D9A82400BE2A7C /* mlViewEmotionInput.m */; };
+		8ED599E816DD1869003264E0 /* interactiveViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED599E616DD1869003264E0 /* interactiveViewController.h */; };
+		8ED599E916DD1869003264E0 /* interactiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED599E716DD1869003264E0 /* interactiveViewController.m */; };
+		8ED599ED16DD1C9E003264E0 /* photoLikeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED599EB16DD1C9E003264E0 /* photoLikeViewController.h */; };
+		8ED599EE16DD1C9E003264E0 /* photoLikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED599EC16DD1C9E003264E0 /* photoLikeViewController.m */; };
 		8EDFD71E16C1FC8800D31651 /* toolIosSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EDFD71C16C1FC8800D31651 /* toolIosSize.h */; };
 		8EDFD71F16C1FC8800D31651 /* toolIosSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDFD71D16C1FC8800D31651 /* toolIosSize.m */; };
 		8EDFD75416C2233F00D31651 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDFD75316C2233F00D31651 /* ImageIO.framework */; };
@@ -424,6 +428,10 @@
 		8ECBC1DE16D9A02800BE2A7C /* photoCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoCommentViewController.m; sourceTree = "<group>"; };
 		8ECBC1E116D9A82400BE2A7C /* mlViewEmotionInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mlViewEmotionInput.h; sourceTree = "<group>"; };
 		8ECBC1E216D9A82400BE2A7C /* mlViewEmotionInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mlViewEmotionInput.m; sourceTree = "<group>"; };
+		8ED599E616DD1869003264E0 /* interactiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interactiveViewController.h; sourceTree = "<group>"; };
+		8ED599E716DD1869003264E0 /* interactiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = interactiveViewController.m; sourceTree = "<group>"; };
+		8ED599EB16DD1C9E003264E0 /* photoLikeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoLikeViewController.h; sourceTree = "<group>"; };
+		8ED599EC16DD1C9E003264E0 /* photoLikeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoLikeViewController.m; sourceTree = "<group>"; };
 		8EDFD71C16C1FC8800D31651 /* toolIosSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = toolIosSize.h; sourceTree = "<group>"; };
 		8EDFD71D16C1FC8800D31651 /* toolIosSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toolIosSize.m; sourceTree = "<group>"; };
 		8EDFD75316C2233F00D31651 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -774,6 +782,10 @@
 			children = (
 				8ECBC1DD16D9A02800BE2A7C /* photoCommentViewController.h */,
 				8ECBC1DE16D9A02800BE2A7C /* photoCommentViewController.m */,
+				8ED599E616DD1869003264E0 /* interactiveViewController.h */,
+				8ED599E716DD1869003264E0 /* interactiveViewController.m */,
+				8ED599EB16DD1C9E003264E0 /* photoLikeViewController.h */,
+				8ED599EC16DD1C9E003264E0 /* photoLikeViewController.m */,
 			);
 			name = interactive;
 			sourceTree = "<group>";
@@ -1105,6 +1117,8 @@
 				8ECBC1DF16D9A02800BE2A7C /* photoCommentViewController.h in Headers */,
 				8ECBC1E316D9A82400BE2A7C /* mlViewEmotionInput.h in Headers */,
 				8EAEF52716DA709900F9346F /* tripMapViewController.h in Headers */,
+				8ED599E816DD1869003264E0 /* interactiveViewController.h in Headers */,
+				8ED599ED16DD1C9E003264E0 /* photoLikeViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1357,6 +1371,8 @@
 				8ECBC1E016D9A02800BE2A7C /* photoCommentViewController.m in Sources */,
 				8ECBC1E416D9A82400BE2A7C /* mlViewEmotionInput.m in Sources */,
 				8EAEF52816DA709900F9346F /* tripMapViewController.m in Sources */,
+				8ED599E916DD1869003264E0 /* interactiveViewController.m in Sources */,
+				8ED599EE16DD1C9E003264E0 /* photoLikeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

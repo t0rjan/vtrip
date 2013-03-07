@@ -90,11 +90,11 @@
     self.page += 1;
     [self.modelMyTrip fetchMyTripList:1 page:self.page];
     NSDictionary *rs = [self.modelMyTrip getDataDictionary];
-    self.tripList = [NSMutableArray]
-    //[tripList addObjectsFromArray:(NSArray *)[rs objectForKey:@"rows"]];
-    
+    self.tripList = [self.tripList arrayByAddingObjectsFromArray:[rs objectForKey:@"rows"]];
+
     [self clearContentInset];
     [self.tb reloadData];
+
 }
 - (void)showNewTrip
 {
@@ -159,7 +159,7 @@
     self.tb.tableHeaderView = tableHeader;
     
     UIView *tableFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
-    tableFooter.backgroundColor = [UIColor redColor];
+    tableFooter.backgroundColor = [UIColor greenColor];
     self.tb.tableFooterView = tableFooter;
 }
 - (void)renderMyIndex

@@ -21,11 +21,12 @@
 #import "tripMapViewController.h"
 #import "positionInfoViewController.h"
 #import "photoCommentViewController.h"
+#import "photoLikeViewController.h"
 //view
 #import "mlViewEleTableLoadingInset.h"
 #import "mlViewCustomNotice.h"
 
-@interface tripShowViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,MKMapViewDelegate>
+@interface tripShowViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,MKMapViewDelegate,mlViewEleIconDelegate>
 
 @property (assign , nonatomic) modelMyTrip *modelMyTrip;
 
@@ -38,6 +39,7 @@
 @property (strong , nonatomic) IBOutlet UIButton *btn;
 @property (strong , nonatomic) tripMapViewController    *mapController;
 @property (retain , nonatomic) photoCommentViewController *photoCmtC;
+@property (retain , nonatomic) photoLikeViewController *photoLikeC;
 
 
 - (void)render;

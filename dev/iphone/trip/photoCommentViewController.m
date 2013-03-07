@@ -29,8 +29,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self viewDidAppear:YES];
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    UIView *cmtForm = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
+    self.navigationItem.title = @"好多字啊～～～～～～～～～";
+    self.view.backgroundColor = [UIColor blueColor];
+    UIView *cmtForm = [[UIView alloc] initWithFrame:CGRectMake(0, [toolIosSize heightWithoutNav]-40, 320, 40)];
     cmtForm.backgroundColor = [UIColor lightGrayColor];
     
     UIButton *voiceBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -48,8 +55,6 @@
     [cmtForm addSubview:cmtSubmit];
     
     self.emotionInput = [[mlViewEmotionInput alloc] init];
-    
-    
     
     [self.view addSubview:cmtForm];
 }

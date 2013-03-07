@@ -41,7 +41,14 @@
         self.numberBg.hidden = YES;
         [self addSubview:self.numberBg];
         
+        /*
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self.delegate action:@selector(mlViewEleIconLongPress:)];
+        longPress.minimumPressDuration = 1.0;
+        longPress.delegate = self.delegate;
         
+        [self addGestureRecognizer:longPress];
+        */
+
     }
     return self;
 }
@@ -62,4 +69,8 @@
     self.backgroundColor = [UIColor blueColor];
 }
 
+- (void)aaa
+{
+    NSLog(@"wfwfwf");
+}
 @end
