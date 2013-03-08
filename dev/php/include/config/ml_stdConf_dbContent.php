@@ -74,4 +74,26 @@ return array(
         'tb_n' => 1,
         'tb_prefix' => 'vt_trip_photo'
     ),
+    'trip_comment' => array(
+        'connect' => array(
+            'master' => array(
+                'host' => array(
+                    0 => 'localhost:3306'
+                ),
+                'user' => 'trip',
+                'pw' => 'cucued',
+                'name' => 'trip',
+            ),
+            'slave' => array(
+                'host' => array(
+                    0 => 'localhost:3306'
+                ),
+                'user' => 'trip',
+                'pw' => 'cucued',
+                'name' => 'trip',
+            )
+        ),
+        'tb_n' => 1,
+        'tb_prefix' => 'vt_trip_comment'
+    ),
 );

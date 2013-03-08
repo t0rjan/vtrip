@@ -2,12 +2,18 @@
 
 class ml_api_controller
 {
+    const PERMISSION_USER = 1;
+    const PERMISSION_ALL = 0;
 	private $start_time;
+    private $permission;
 
 	public function __construct()
 	{
         ml_factory::set_controller($this);
 		$this->start_time = microtime(1);
+        if ($this->permission == PERMISSION_USER) {
+            $this->_check_permission();
+        }
 		$this->initParam();
         $this->checkParam();
         $this->main();
@@ -63,12 +69,15 @@ class ml_api_controller
         $this->_over();
         ml_tool_jsoutput::output($out_data , $this->input('format') , $this->input('varname') , $this->input('jsonp'));
     }
-    public function check_user_permission($uid)
+    public function getOperateUid()
     {
-    	/*
-    	$code = $this->input('uh');//uid hash
-    	return ml_tool_resid::apiUidEncrypt($uid , $code);
-    	 */
-    	return true;
+        
+
+
+    }
+    private function _check_permission()
+    {
+
+
     }
 }
