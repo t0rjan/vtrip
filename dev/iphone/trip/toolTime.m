@@ -24,5 +24,11 @@
     NSString *dateS = [dateFormater stringFromDate:[self int2nsdate:timestamp]];
     return dateS;
 }
-
++ (NSDate *)str2nsdate:(NSString *)str
+{
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+    [dateFormater setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [dateFormater dateFromString:str];
+    return date;
+}
 @end

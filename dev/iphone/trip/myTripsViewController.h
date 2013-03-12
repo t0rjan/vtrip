@@ -10,6 +10,7 @@
 //controller
 #import "tripShowViewController.h"
 #import "newTripViewController.h"
+#import "editTripViewController.h"
 #import "receiveCommentViewController.h"
 
 //model

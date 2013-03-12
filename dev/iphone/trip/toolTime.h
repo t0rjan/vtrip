@@ -12,4 +12,5 @@
 
 + (NSDate *)int2nsdate:(int)timestamp;
 + (NSString *)int2Ymd:(int)timestamp;
++ (NSDate *)str2nsdate:(NSString *)str;
 @end

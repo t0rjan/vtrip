@@ -77,7 +77,6 @@
 
 - (void)dismissModel
 {
-    NSLog(@"xxx");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -165,6 +165,8 @@
 		8E6A024716D5EC3300005F44 /* mlViewElementTimeClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A024516D5EC3300005F44 /* mlViewElementTimeClock.m */; };
 		8E6A024B16D5F96E00005F44 /* mlViewEleIconWithNumBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E6A024916D5F96D00005F44 /* mlViewEleIconWithNumBase.h */; };
 		8E6A024C16D5F96E00005F44 /* mlViewEleIconWithNumBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6A024A16D5F96D00005F44 /* mlViewEleIconWithNumBase.m */; };
+		8EADD54616EF6EB3002700C0 /* editTripViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EADD54416EF6EB3002700C0 /* editTripViewController.h */; };
+		8EADD54716EF6EB3002700C0 /* editTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EADD54516EF6EB3002700C0 /* editTripViewController.m */; };
 		8EAEF52716DA709900F9346F /* tripMapViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EAEF52516DA709900F9346F /* tripMapViewController.h */; };
 		8EAEF52816DA709900F9346F /* tripMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEF52616DA709900F9346F /* tripMapViewController.m */; };
 		8ECBC19C16D8383D00BE2A7C /* positionInfoViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ECBC19A16D8383D00BE2A7C /* positionInfoViewController.h */; };
@@ -179,6 +181,8 @@
 		8ED599E916DD1869003264E0 /* interactiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED599E716DD1869003264E0 /* interactiveViewController.m */; };
 		8ED599ED16DD1C9E003264E0 /* photoLikeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED599EB16DD1C9E003264E0 /* photoLikeViewController.h */; };
 		8ED599EE16DD1C9E003264E0 /* photoLikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED599EC16DD1C9E003264E0 /* photoLikeViewController.m */; };
+		8ED599F116EA5A74003264E0 /* newTripViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED599EF16EA5A73003264E0 /* newTripViewController.h */; };
+		8ED599F216EA5A74003264E0 /* newTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED599F016EA5A73003264E0 /* newTripViewController.m */; };
 		8EDFD71E16C1FC8800D31651 /* toolIosSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EDFD71C16C1FC8800D31651 /* toolIosSize.h */; };
 		8EDFD71F16C1FC8800D31651 /* toolIosSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDFD71D16C1FC8800D31651 /* toolIosSize.m */; };
 		8EDFD75416C2233F00D31651 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDFD75316C2233F00D31651 /* ImageIO.framework */; };
@@ -188,9 +192,8 @@
 		8EDFD77716C3DFEB00D31651 /* customAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDFD77516C3DFEB00D31651 /* customAnnotation.m */; };
 		8EDFD77F16C4D13B00D31651 /* tabBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EDFD77E16C4D13B00D31651 /* tabBg.png */; };
 		8EDFD78516C4E2DB00D31651 /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EDFD78416C4E2DB00D31651 /* 111.png */; };
-		8EDFD78A16C4E9FD00D31651 /* newTripViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EDFD78716C4E9F400D31651 /* newTripViewController.h */; };
-		8EDFD78B16C4E9FD00D31651 /* newTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDFD78816C4E9F500D31651 /* newTripViewController.m */; };
-		8EDFD78C16C4E9FD00D31651 /* newTripViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EDFD78916C4E9F800D31651 /* newTripViewController.xib */; };
+		8EDFD78A16C4E9FD00D31651 /* newTripFormViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EDFD78716C4E9F400D31651 /* newTripFormViewController.h */; };
+		8EDFD78B16C4E9FD00D31651 /* newTripFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDFD78816C4E9F500D31651 /* newTripFormViewController.m */; };
 		8EE2D98916C941F0004249A5 /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE2D98816C941F0004249A5 /* map-pin.png */; };
 		8EE4427816D2184F00783E7D /* mlViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EE4427616D2184F00783E7D /* mlViewController.h */; };
 		8EE4427916D2184F00783E7D /* mlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4427716D2184F00783E7D /* mlViewController.m */; };
@@ -418,6 +421,8 @@
 		8E6A024516D5EC3300005F44 /* mlViewElementTimeClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mlViewElementTimeClock.m; sourceTree = "<group>"; };
 		8E6A024916D5F96D00005F44 /* mlViewEleIconWithNumBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mlViewEleIconWithNumBase.h; sourceTree = "<group>"; };
 		8E6A024A16D5F96D00005F44 /* mlViewEleIconWithNumBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mlViewEleIconWithNumBase.m; sourceTree = "<group>"; };
+		8EADD54416EF6EB3002700C0 /* editTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editTripViewController.h; sourceTree = "<group>"; };
+		8EADD54516EF6EB3002700C0 /* editTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = editTripViewController.m; sourceTree = "<group>"; };
 		8EAEF52516DA709900F9346F /* tripMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tripMapViewController.h; sourceTree = "<group>"; };
 		8EAEF52616DA709900F9346F /* tripMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tripMapViewController.m; sourceTree = "<group>"; };
 		8ECBC19A16D8383D00BE2A7C /* positionInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = positionInfoViewController.h; sourceTree = "<group>"; };
@@ -432,6 +437,8 @@
 		8ED599E716DD1869003264E0 /* interactiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = interactiveViewController.m; sourceTree = "<group>"; };
 		8ED599EB16DD1C9E003264E0 /* photoLikeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoLikeViewController.h; sourceTree = "<group>"; };
 		8ED599EC16DD1C9E003264E0 /* photoLikeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoLikeViewController.m; sourceTree = "<group>"; };
+		8ED599EF16EA5A73003264E0 /* newTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newTripViewController.h; sourceTree = "<group>"; };
+		8ED599F016EA5A73003264E0 /* newTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newTripViewController.m; sourceTree = "<group>"; };
 		8EDFD71C16C1FC8800D31651 /* toolIosSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = toolIosSize.h; sourceTree = "<group>"; };
 		8EDFD71D16C1FC8800D31651 /* toolIosSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = toolIosSize.m; sourceTree = "<group>"; };
 		8EDFD75316C2233F00D31651 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -441,9 +448,8 @@
 		8EDFD77516C3DFEB00D31651 /* customAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customAnnotation.m; sourceTree = "<group>"; };
 		8EDFD77E16C4D13B00D31651 /* tabBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBg.png; sourceTree = "<group>"; };
 		8EDFD78416C4E2DB00D31651 /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
-		8EDFD78716C4E9F400D31651 /* newTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newTripViewController.h; sourceTree = "<group>"; };
-		8EDFD78816C4E9F500D31651 /* newTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newTripViewController.m; sourceTree = "<group>"; };
-		8EDFD78916C4E9F800D31651 /* newTripViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = newTripViewController.xib; sourceTree = "<group>"; };
+		8EDFD78716C4E9F400D31651 /* newTripFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newTripFormViewController.h; sourceTree = "<group>"; };
+		8EDFD78816C4E9F500D31651 /* newTripFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newTripFormViewController.m; sourceTree = "<group>"; };
 		8EE2D98816C941F0004249A5 /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin.png"; sourceTree = "<group>"; };
 		8EE4427616D2184F00783E7D /* mlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mlViewController.h; sourceTree = "<group>"; };
 		8EE4427716D2184F00783E7D /* mlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mlViewController.m; sourceTree = "<group>"; };
@@ -540,9 +546,12 @@
 		8E3A9E7E16CC837B0031E502 /* editTrip */ = {
 			isa = PBXGroup;
 			children = (
-				8EDFD78716C4E9F400D31651 /* newTripViewController.h */,
-				8EDFD78816C4E9F500D31651 /* newTripViewController.m */,
-				8EDFD78916C4E9F800D31651 /* newTripViewController.xib */,
+				8EDFD78716C4E9F400D31651 /* newTripFormViewController.h */,
+				8EDFD78816C4E9F500D31651 /* newTripFormViewController.m */,
+				8ED599EF16EA5A73003264E0 /* newTripViewController.h */,
+				8ED599F016EA5A73003264E0 /* newTripViewController.m */,
+				8EADD54416EF6EB3002700C0 /* editTripViewController.h */,
+				8EADD54516EF6EB3002700C0 /* editTripViewController.m */,
 			);
 			name = editTrip;
 			sourceTree = "<group>";
@@ -1085,7 +1094,7 @@
 				8EDFD71E16C1FC8800D31651 /* toolIosSize.h in Headers */,
 				8EDFD75716C2514E00D31651 /* toolStdView.h in Headers */,
 				8EDFD77616C3DFEB00D31651 /* customAnnotation.h in Headers */,
-				8EDFD78A16C4E9FD00D31651 /* newTripViewController.h in Headers */,
+				8EDFD78A16C4E9FD00D31651 /* newTripFormViewController.h in Headers */,
 				8E3A9E7C16CBEB400031E502 /* modelBaseViewController.h in Headers */,
 				8E3A9E8616CF0A040031E502 /* mlViewCustomActionSheet.h in Headers */,
 				8E3A9E8A16CF0AB50031E502 /* mlViewCustomLayer.h in Headers */,
@@ -1119,6 +1128,8 @@
 				8EAEF52716DA709900F9346F /* tripMapViewController.h in Headers */,
 				8ED599E816DD1869003264E0 /* interactiveViewController.h in Headers */,
 				8ED599ED16DD1C9E003264E0 /* photoLikeViewController.h in Headers */,
+				8ED599F116EA5A74003264E0 /* newTripViewController.h in Headers */,
+				8EADD54616EF6EB3002700C0 /* editTripViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1264,7 +1275,6 @@
 				8E57B2BD16C15CD80011D331 /* cameraViewController.xib in Resources */,
 				8EDFD77F16C4D13B00D31651 /* tabBg.png in Resources */,
 				8EDFD78516C4E2DB00D31651 /* 111.png in Resources */,
-				8EDFD78C16C4E9FD00D31651 /* newTripViewController.xib in Resources */,
 				8EE2D98916C941F0004249A5 /* map-pin.png in Resources */,
 				8E6A023A16D5226700005F44 /* 222.png in Resources */,
 				8E6A023C16D5236600005F44 /* navbtn_bg.png in Resources */,
@@ -1340,7 +1350,7 @@
 				8EDFD71F16C1FC8800D31651 /* toolIosSize.m in Sources */,
 				8EDFD75816C2514E00D31651 /* toolStdView.m in Sources */,
 				8EDFD77716C3DFEB00D31651 /* customAnnotation.m in Sources */,
-				8EDFD78B16C4E9FD00D31651 /* newTripViewController.m in Sources */,
+				8EDFD78B16C4E9FD00D31651 /* newTripFormViewController.m in Sources */,
 				8E3A9E7D16CBEB400031E502 /* modelBaseViewController.m in Sources */,
 				8E3A9E8716CF0A040031E502 /* mlViewCustomActionSheet.m in Sources */,
 				8E3A9E8B16CF0AB50031E502 /* mlViewCustomLayer.m in Sources */,
@@ -1373,6 +1383,8 @@
 				8EAEF52816DA709900F9346F /* tripMapViewController.m in Sources */,
 				8ED599E916DD1869003264E0 /* interactiveViewController.m in Sources */,
 				8ED599EE16DD1C9E003264E0 /* photoLikeViewController.m in Sources */,
+				8ED599F216EA5A74003264E0 /* newTripViewController.m in Sources */,
+				8EADD54716EF6EB3002700C0 /* editTripViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
