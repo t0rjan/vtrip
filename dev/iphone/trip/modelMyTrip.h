@@ -17,4 +17,6 @@
 - (BOOL) fetchMyTripList: (NSInteger *)uid page:(NSInteger)page;
 - (BOOL) fetchTripPhotos: (NSInteger *)uid withTripId:(NSInteger *)tripId page:(NSInteger)page;
 - (BOOL) addTripNamed:(NSString*)title who:(NSInteger)uid startAt: (NSString *)startDate forDays:(NSInteger)days toDestination:(NSString *) dest;
+- (BOOL) editTripByid:(int)id named:(NSString*)title who:(NSInteger)uid startAt: (NSString *)startDate forDays:(NSInteger)days toDestination:(NSString *) dest;
+- (BOOL) cancelTripByid:(int)id who:(NSInteger)uid;
 @end

@@ -9,7 +9,7 @@
 #import "newTripFormViewController.h"
 #import "toolTime.h"
 
-@interface editTripViewController : newTripFormViewController
+@interface editTripViewController : newTripFormViewController <UIActionSheetDelegate>
 
 @property (assign , nonatomic) NSMutableDictionary *tripInfo;
 

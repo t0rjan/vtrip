@@ -10,13 +10,11 @@
 
 @interface newTripViewController ()
 
-@property (assign , nonatomic) modelMyTrip *modelMyTrip;
 
 @end
 
 @implementation newTripViewController
 
-@synthesize modelMyTrip;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

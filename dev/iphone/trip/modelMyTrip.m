@@ -47,5 +47,32 @@
     NSString *url = [NSString stringWithFormat:@"%@/api_mytrip_createtrip.php" , self.__APIDOMAIN];
     return [super doSynHttpPost:url postData:data];
 }
-
+- (BOOL)editTripByid:(int)id named:(NSString *)title who:(NSInteger)uid startAt:(NSString *)startDate forDays:(NSInteger)days toDestination:(NSString *)dest
+{
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+    
+    NSString *uidS = [NSString stringWithFormat:@"%d" , uid];
+    NSString *daysS = [NSString stringWithFormat:@"%d" , days];
+    
+    [data setObject:id forKey:@"id"];
+    [data setObject:title forKey:@"title"];
+    [data setObject:uidS forKey:@"uid"];
+    [data setObject:startDate forKey:@"startDate"];
+    [data setObject:daysS forKey:@"days"];
+    //[data setObject:dest forKey:@"destintion"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@/api_mytrip_edittrip.php" , self.__APIDOMAIN];
+    return [super doSynHttpPost:url postData:data];
+}
+- (BOOL)cancelTripByid:(int)id who:(NSInteger)uid
+{
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+    NSString *uidS = [NSString stringWithFormat:@"%d" , uid];
+    [data setObject:id forKey:@"id"];
+    [data setObject:uidS forKey:@"uid"];
+    NSLog(@"%@" , data);
+    NSString *url = [NSString stringWithFormat:@"%@/api_mytrip_canceltrip.php" , self.__APIDOMAIN];
+    NSLog(@"%@" , url);
+    return [super doSynHttpPost:url postData:data];
+}
 @end

@@ -26,6 +26,8 @@
 @property (retain , nonatomic) UILabel *noticeLabel;
 @property (retain , nonatomic) UIDatePicker *datePicker;
 @property (retain , nonatomic) UIPickerView *daysPicker;
+@property (assign , nonatomic) modelMyTrip *modelMyTrip;
+
 
 - (IBAction)resignInput;
 - (BOOL)isAllInputAvailable;

@@ -18,6 +18,8 @@
 @property (retain , nonatomic) receiveCommentViewController *inboxC;
 @property (assign , nonatomic) newTripViewController *newTripC;
 @property (assign , nonatomic) editTripViewController *editTripC;
+@property (assign , nonatomic) UIView *tableHeader;
+@property (assign , nonatomic) UIButton *newTripBtn;
 
 @end
 
@@ -28,6 +30,8 @@
 @synthesize tripList;
 @synthesize tripNowStatus;
 @synthesize tripNowInfo;
+@synthesize tableHeader;
+@synthesize newTripBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,6 +73,10 @@
     self.tb.tableFooterView = tableFooter;
     
     self.tripNowStatus = 0;
+    
+    self.tableHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 55)];
+    self.tb.tableHeaderView = self.tableHeader;
+
     [self reloadData];
 }
 
@@ -82,6 +90,8 @@
 #pragma action
 - (void)reloadData
 {
+    [self insertContentInset];
+
     if (self.modelMyTrip == nil) {
         self.modelMyTrip = [[modelMyTrip alloc] init];
     }
@@ -90,6 +100,8 @@
     NSDictionary *rs = [self.modelMyTrip getDataDictionary];
     self.tripList = [rs objectForKey:@"rows"];
 
+    self.tripNowStatus = 0;
+    self.tripNowInfo = nil;
     for (NSDictionary *d in self.tripList) {
         NSString *status = [d objectForKey:@"status"];
         if ([status isEqualToString:@"0"]) {
@@ -97,7 +109,6 @@
             self.tripNowInfo = (NSMutableDictionary *)d;
         }
     }
-    
     [self clearContentInset];
     [self renderNewTripBtn];
     [self.tb reloadData];
@@ -174,31 +185,39 @@
     }];
     
 }
+- (void)insertContentInset
+{
+    if (self.tb.contentInset.top == 0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.tb.contentInset = UIEdgeInsetsMake(60, 0, 0, 0);
+        }];
+    }
+}
 - (void)renderNewTripBtn
 {
-    UIView *tableHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 55)];
-    UIButton *newTripBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 10, 260, 35)];
-    if (self.tripNowStatus == 0) {
-        newTripBtn.backgroundColor = [UIColor clearColor];
-        newTripBtn.layer.cornerRadius = 6;
-        [newTripBtn setImage:[UIImage imageNamed:@"trip_add.png"] forState:UIControlStateNormal];
-        [newTripBtn setImage:[UIImage imageNamed:@"trip_add_2.png"] forState:UIControlStateHighlighted];
+    if (self.newTripBtn != nil) {
+        [self.newTripBtn removeFromSuperview];
+        self.newTripBtn = nil;
         
-        [newTripBtn addTarget:self action:@selector(showNewTrip) forControlEvents:UIControlEventTouchUpInside];
+    }
+    self.newTripBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, 10, 260, 35)];
+    [self.newTripBtn addTarget:self action:@selector(showNewTrip) forControlEvents:UIControlEventTouchUpInside];
+    self.newTripBtn.backgroundColor = [UIColor clearColor];
+    self.newTripBtn.layer.cornerRadius = 6;
+    
+    
+    if (self.tripNowStatus == 0) {
+        [self.newTripBtn setImage:[UIImage imageNamed:@"trip_add.png"] forState:UIControlStateNormal];
+        [self.newTripBtn setImage:[UIImage imageNamed:@"trip_add_2.png"] forState:UIControlStateHighlighted];
     }
     else if (self.tripNowStatus == 1)
     {
-        newTripBtn.backgroundColor = [UIColor clearColor];
-        newTripBtn.layer.cornerRadius = 6;
         UILabel *btnLb = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
         NSString *title = [self.tripNowInfo objectForKey:@"title"];
         btnLb.text = [NSString stringWithFormat:@"下一站：%@",title];
-        [newTripBtn addSubview:btnLb];
-        [newTripBtn addTarget:self action:@selector(showNewTrip) forControlEvents:UIControlEventTouchUpInside];
+        [self.newTripBtn addSubview:btnLb];
     }
-    
-    [tableHeader addSubview:newTripBtn];
-    self.tb.tableHeaderView = tableHeader;
+    [self.tableHeader addSubview:self.newTripBtn];
 }
 - (void)renderMyIndex
 {

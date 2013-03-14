@@ -45,6 +45,7 @@
 @synthesize tripDate;
 @synthesize tripDays;
 @synthesize tripWhere;
+@synthesize modelMyTrip;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
