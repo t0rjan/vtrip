@@ -66,8 +66,33 @@ class ml_model_dbTrip extends Lib_datamodel_db
                 'days' => $days,
                 'ctime' => time()
             );
-        Tool_logger::debugLog('dd' , serialize($data) , true);
+        
         return $this->insert($data);
+    }
+    function editTripByid($id , $uid , $startdate , $days , $title)
+    {
+        if(!$this->init_db($uid , self::DB_MASTER))
+            return false;
+
+        $data = array(
+                'title' => $title,
+                'start_date' => $startdate,
+                'days' => $days,
+                'ctime' => time()
+            );
+        $where = 'id = '.$id.' and uid = '.$uid;
+        return $this->update($data , $where , 1);
+    }
+    function delTripByid($id , $uid)
+    {
+        if(!$this->init_db($uid , self::DB_MASTER))
+            return false;
+
+        $data = array(
+                'status' => self::STATUS_DEL,
+            );
+        $where = 'id = '.$id.' and uid = '.$uid;
+        return $this->update($data , $where , 1);
     }
 }
 ?>

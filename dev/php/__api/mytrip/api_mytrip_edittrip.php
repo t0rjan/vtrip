@@ -2,10 +2,10 @@
 
 include_once '../../__global.php';
 include_once SERVER_ROOT_PATH.'/include/config/dataRule/ml_datarule_content.php';
-
-class aj_createtrip extends ml_api_controller {
+class aj_edittrip extends ml_api_controller {
     
     private $uid;
+    private $id;
     private $title;
     private $startDate;
     private $days;
@@ -13,6 +13,7 @@ class aj_createtrip extends ml_api_controller {
    
     
     function initParam() {
+        $this->id = $this->input('id');
         $this->uid = $this->input('uid');
         $this->title = $this->input('title');
         $this->startDate = $this->input('startDate');
@@ -35,11 +36,11 @@ class aj_createtrip extends ml_api_controller {
     function main() {
         $oTrip = new ml_model_dbTrip();
         
-        $oTrip->addTripByUid($this->uid , $this->startDate , $this->days , $this->title);
+        $oTrip->editTripByid($this->id , $this->uid , $this->startDate , $this->days , $this->title);
         
         
         $this->api_output(ML_RCODE_SUCC);
     }
 }
 
-new aj_createtrip();
+new aj_edittrip();
